@@ -1,0 +1,19 @@
+﻿@model dropdownListExample.Models.studentEditViewModel
+
+@{
+    ViewBag.Title = "Ex3";
+}
+
+<h2>Ex3</h2>
+<table> 
+    <tr><td>example without dropdowm for</td>
+        <td class="editor-field">
+            @Html.DropDownList("branchDdl",Model.BranchList,"Select")
+        </td>
+    </tr>
+    <tr><td>example with dropdowm for and lamda expression</td>
+        <td class="editor-field">
+            @Html.DropDownListFor(m=>m.student.studentBranch,new SelectList(Model.BranchList,"Value", "Text"),"SelectList")
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,8 @@
+﻿@model dropdownListExample.Models.userModel
+
+@{
+    ViewBag.Title = "Ex2";
+}
+
+<h2>Ex2</h2>
+<p>@Html.DropDownList("selected",Model.ListItems,Model.SelectedItem)</p>

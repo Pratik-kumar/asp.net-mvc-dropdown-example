@@ -1,0 +1,29 @@
+﻿@model dropdownListExample.Models.studentEditViewModel
+
+@{
+    ViewBag.Title = "Ex4";
+}
+
+<h2>Ex4 - dropdown list for student Branch from Branch table</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>studentEditViewModel</legend>
+        @Html.EditorFor(m => m.student.studentId)
+        @Html.EditorFor(m => m.student.studentname)
+         @Html.DropDownListFor(m=>m.student.studentBranch,new SelectList(Model.BranchList,"Value", "Text"),"Selct-Branch")
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
